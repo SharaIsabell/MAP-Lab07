@@ -5,30 +5,26 @@ import figuras.Retangulo;
 import figuras.Trapezio;
 import figuras.Triangulo;
 
-public class DesenharFigura implements Visitor{
+public class DesenharFigura implements Visitor<String>{  // Falta fazer
 
 	@Override
-	public double visitaRetangulo(Retangulo retangulo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public String visitaRetangulo(Retangulo retangulo) {
+		return "";
 	}
 
 	@Override
-	public double visitaTriangulo(Triangulo triangulo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public String visitaTriangulo(Triangulo triangulo) {
+		return "";
 	}
 
 	@Override
-	public double visitaCirculo(Circulo circulo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public String visitaCirculo(Circulo circulo) {
+		return "";
 	}
 
 	@Override
-	public double visitaTrapezio(Trapezio trapezio) {
-		// TODO Auto-generated method stub
-		return 0;
+	public String visitaTrapezio(Trapezio trapezio) {
+		return "";
 	}
 
 }

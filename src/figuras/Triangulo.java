@@ -17,7 +17,7 @@ public class Triangulo implements ElementoConcreto{
 	}
 
 	@Override
-	public void aceitaVisita(Visitor visitor) {
+	public <T> void aceitaVisita(Visitor<T> visitor) {
 		visitor.visitaTriangulo(this);
 		
 	}

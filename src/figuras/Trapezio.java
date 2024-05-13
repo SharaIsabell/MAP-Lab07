@@ -19,7 +19,7 @@ public class Trapezio implements ElementoConcreto{
 	}
 
 	@Override
-	public void aceitaVisita(Visitor visitor) {
+	public <T> void aceitaVisita(Visitor<T> visitor) {
 		visitor.visitaTrapezio(this);
 		
 	}

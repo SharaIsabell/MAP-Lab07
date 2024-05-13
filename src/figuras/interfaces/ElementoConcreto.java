@@ -3,5 +3,5 @@ package figuras.interfaces;
 import visitors.Visitor;
 
 public interface ElementoConcreto {
-	public void aceitaVisita(Visitor visitor);
+	public <T> void aceitaVisita(Visitor<T> visitor);
 }

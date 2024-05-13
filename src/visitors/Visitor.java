@@ -5,10 +5,10 @@ import figuras.Retangulo;
 import figuras.Trapezio;
 import figuras.Triangulo;
 
-public interface Visitor {
-	public double visitaRetangulo(Retangulo retangulo);
-	public double visitaTriangulo(Triangulo triangulo);
-	public double visitaCirculo(Circulo circulo);
-	public double visitaTrapezio(Trapezio trapezio);
+public interface Visitor<T> {
+	T visitaRetangulo(Retangulo retangulo);
+	T visitaTriangulo(Triangulo triangulo);
+	T visitaCirculo(Circulo circulo);
+	T visitaTrapezio(Trapezio trapezio);
 
 }
