@@ -10,5 +10,4 @@ public interface Visitor<T> {
 	T visitaTriangulo(Triangulo triangulo);
 	T visitaCirculo(Circulo circulo);
 	T visitaTrapezio(Trapezio trapezio);
-
 }

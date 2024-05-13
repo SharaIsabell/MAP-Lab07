@@ -14,14 +14,14 @@ public class CalcularArea implements Visitor<Double>{
 
 	@Override
 	public Double visitaTriangulo(Triangulo triangulo) {
-		 double semiPerimetro = (triangulo.getLados()[1] + triangulo.getLados()[2] + triangulo.getLados()[3]) / 2;
-		 double area = Math.sqrt(semiPerimetro * (semiPerimetro - triangulo.getLados()[1]) * (semiPerimetro - triangulo.getLados()[2]) * (semiPerimetro - triangulo.getLados()[3]));
+		 double semiPerimetro = (triangulo.getLados()[0] + triangulo.getLados()[1] + triangulo.getLados()[2]) / 2;
+		 double area = Math.sqrt(semiPerimetro * (semiPerimetro - triangulo.getLados()[0]) * (semiPerimetro - triangulo.getLados()[1]) * (semiPerimetro - triangulo.getLados()[2]));
 		 return area;
 	}
 
 	@Override
 	public Double visitaCirculo(Circulo circulo) {
-		return circulo.PI * Math.pow(circulo.getRaio(), 2);
+		return Circulo.PI * Math.pow(circulo.getRaio(), 2);
 	}
 
 	@Override

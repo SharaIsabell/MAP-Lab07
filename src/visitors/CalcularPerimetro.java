@@ -23,7 +23,7 @@ public class CalcularPerimetro implements Visitor<Double>{
 
 	@Override
 	public Double visitaCirculo(Circulo circulo) {
-		return 2 * circulo.PI * circulo.getRaio();
+		return 2 * Circulo.PI * circulo.getRaio();
 	}
 
 	@Override

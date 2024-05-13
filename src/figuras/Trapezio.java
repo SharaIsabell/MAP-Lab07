@@ -7,21 +7,20 @@ import visitors.Visitor;
 public class Trapezio implements ElementoConcreto{
 	private double baseMaior, baseMenor, lado1, lado2, altura;
 
-	public Trapezio(double baseMaior, double baseMenor, double lado1, double lado2) throws TrapezioException {
+	public Trapezio(double baseMaior, double baseMenor, double lado1, double lado2, double altura) throws TrapezioException {
 		this.baseMaior = baseMaior;
 		this.baseMenor = baseMenor;
 		this.lado1 = lado1;
 		this.lado2 = lado2;
-		this.altura = calcularAltura();
+		this.altura = altura;
 		if(trapezioInvalido()) {
 			throw new TrapezioException("Um dos parâmetros é menor do que zero.");
 		}
 	}
 
 	@Override
-	public <T> void aceitaVisita(Visitor<T> visitor) {
-		visitor.visitaTrapezio(this);
-		
+	public <T> T aceitaVisita(Visitor<T> visitor) {
+		return visitor.visitaTrapezio(this);
 	}
 
 	public double getBaseMaior() {
@@ -43,15 +42,9 @@ public class Trapezio implements ElementoConcreto{
 	public double getAltura() {
 		return altura;
 	}
-
-	private double calcularAltura(){
-		 double cateto1= (baseMaior - baseMenor) / 2;
-		 altura = Math.sqrt(Math.pow(cateto1, 2) - Math.pow(lado1, 2));
-		 return altura;
-	}
 	
 	private boolean trapezioInvalido(){
-		return (baseMenor < 0 || baseMaior < 0 || lado1 < 0 || lado2 < 0);
+		return (baseMenor <= 0 || baseMaior <= 0 || lado1 <= 0 || lado2 <= 0 || altura <= 0);
 	}
 
 }

@@ -11,14 +11,14 @@ public class Triangulo implements ElementoConcreto{
 		this.lado1 = lado1;
 		this.lado2 = lado2;
 		this.lado3 = lado3;
-		if(!trianguloNaoValido()) {
+		if(trianguloNaoValido()) {
 			throw new TrianguloException("Um dos lados do triângulo é maior do que o outro. Logo, o triângulo não é válido");
 		}
 	}
 
 	@Override
-	public <T> void aceitaVisita(Visitor<T> visitor) {
-		visitor.visitaTriangulo(this);
+	public <T> T aceitaVisita(Visitor<T> visitor) {
+		return visitor.visitaTriangulo(this);
 		
 	}
 	

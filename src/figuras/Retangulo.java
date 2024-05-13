@@ -16,8 +16,8 @@ public class Retangulo implements ElementoConcreto{
 	}
 	
 	@Override
-	public <T> void aceitaVisita(Visitor<T> visitor) {
-		visitor.visitaRetangulo(this);
+	public <T> T aceitaVisita(Visitor<T> visitor) {
+		return visitor.visitaRetangulo(this);
 	}
 	
 	//Getters

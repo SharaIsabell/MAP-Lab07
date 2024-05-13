@@ -16,9 +16,8 @@ public class Circulo implements ElementoConcreto{
 	}
 
 	@Override
-	public <T> void aceitaVisita(Visitor<T> visitor) {
-		visitor.visitaCirculo(this);
-		
+	public <T> T aceitaVisita(Visitor<T> visitor) {
+		return visitor.visitaCirculo(this);
 	}
 
 	public double getRaio() {
